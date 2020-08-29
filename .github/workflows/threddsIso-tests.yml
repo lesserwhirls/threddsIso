@@ -1,10 +1,6 @@
 on: [pull_request]
 
 jobs:
-  strategy:
-    matrix:
-      # test against latest 8 and 11
-      profile: [ dev, prod ]
   tests-zulu:
     name: threddsIso Tests (Zulu JDK)
     runs-on: ubuntu-latest
@@ -12,6 +8,7 @@ jobs:
       matrix:
         # test against latest 8 and 11
         java: [ 8, 11 ]
+        profile: [ dev, prod ]
     steps:
       - uses: actions/checkout@v2
       - name: Setup java ${{ matrix.java }}
@@ -32,6 +29,11 @@ jobs:
   tests-adpotopenjdk-hs-8-no-build-cache:
     name: netCDF-Java Tests (AdoptOpenJDK-HS 8, no build cache)
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # test against latest 8 and 11
+        java: [ 8, 11 ]
+        profile: [ dev, prod ]
     steps:
       - uses: actions/checkout@v2
       - name: Fetch latest AdoptOpenJDK 8 (hotspot) built for linux"
@@ -50,6 +52,11 @@ jobs:
   tests-adpotopenjdk-hs-8:
     name: netCDF-Java Tests (AdoptOpenJDK-HS 8)
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # test against latest 8 and 11
+        java: [ 8, 11 ]
+        profile: [ dev, prod ]
     steps:
       - uses: actions/checkout@v2
       - name: Fetch latest AdoptOpenJDK 8 (hotspot) built for linux"
@@ -75,6 +82,11 @@ jobs:
   tests-adpotopenjdk-hs-11:
     name: netCDF-Java Tests (AdoptOpenJDK-HS 11)
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # test against latest 8 and 11
+        java: [ 8, 11 ]
+        profile: [ dev, prod ]
     steps:
       - uses: actions/checkout@v2
       - name: Fetch latest AdoptOpenJDK 11 (hotspot) built for linux"
