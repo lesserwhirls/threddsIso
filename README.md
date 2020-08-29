@@ -54,7 +54,7 @@ The NOAA/NGDC ncISO team and the Unidata THREDDS team work closely (and with the
 [SAXON] used for XSLT (net.sf.saxon.TransformerFactoryImpl())
 
 ### <a name="Note_2"></a> Note 2
-[commons-lang3] used in `nciso-common`
+[commons-lang3] used in `nciso-common`gfds
 
 [ncISO]: https://github.com/NOAA-PMEL/uafnciso
 [TDS]: http://www.unidata.ucar.edu/software/tds/current/
